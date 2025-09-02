@@ -1,0 +1,35 @@
+// Fichier android/build.gradle
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // ✅ Plugin Gradle Android à jour
+        classpath 'com.android.tools.build:gradle:8.3.2'
+
+        // ✅ Plugin Kotlin à jour (minimum requis : 1.8.10, ici tu as 1.8.20)
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.20"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// ✅ Organisation des répertoires de build
+rootProject.buildDir = "../build"
+
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+    project.evaluationDependsOn(":app")
+}
+
+// ✅ Tâche pour nettoyer le projet
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

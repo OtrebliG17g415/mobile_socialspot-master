@@ -13,7 +13,8 @@ class _ApiClient implements ApiClient {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'https://raptor-more-eft.ngrok-free.app';
+    // baseUrl ??= 'https://raptor-more-eft.ngrok-free.app';
+    baseUrl ??= 'http://localhost:4000'; // backend Node.js local
   }
 
   final Dio _dio;
@@ -34,7 +35,7 @@ class _ApiClient implements ApiClient {
     )
             .compose(
               _dio.options,
-              '/ad/random',
+              '/api/ads/random',
               queryParameters: queryParameters,
               data: _data,
             )

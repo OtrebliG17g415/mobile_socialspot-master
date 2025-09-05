@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:social_spot/app.dart';
 import 'package:social_spot/helpers/routes/pages.dart';
-import 'package:social_spot/pages/home.page.dart';
 import 'package:social_spot/pages/setting.page.dart';
 import 'package:social_spot/pages/setting_config.page.dart';
 import 'package:social_spot/pages/signup.page.dart';
@@ -21,11 +20,7 @@ class AppRoute {
         );
       case AppPage.signup:
         return MaterialPageRoute(
-          builder: (context) => const SignUpPage(),
-        );
-      case AppPage.home:
-        return MaterialPageRoute(
-          builder: (context) => const HomePage(),
+          builder: (context) => const SignupPage(),
         );
       case AppPage.setting:
         return MaterialPageRoute(

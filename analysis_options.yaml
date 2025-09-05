@@ -1,4 +1,20 @@
+# analyzer:
+#   errors:
+#     non_constant_identifier_names: ignore
+# include: package:flutter_lints/flutter.yaml
+# Utilise les règles officielles de lint de Flutter
+include: package:flutter_lints/flutter.yaml
+
 analyzer:
   errors:
-    non_constant_identifier_names: ignore
-include: package:flutter_lints/flutter.yaml
+    unused_import: warning
+    dead_code: info
+    unnecessary_null_comparison: warning
+
+linter:
+  rules:
+    # Tu peux ajouter ou enlever des règles ici selon tes besoins
+    - avoid_print
+    - prefer_const_constructors
+    - prefer_final_fields
+    - use_key_in_widget_constructors
